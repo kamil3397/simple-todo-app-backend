@@ -1,0 +1,22 @@
+version: "3.4"
+services:
+    
+  mongo:
+    image: mongo
+    container_name: mongo-task
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+  new-app:
+    image: mongo
+    container_name: sherman-app
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+
+  rozmowa-todo-app:
+    image: mongo
+    container_name: rozmowa-todo-app
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
