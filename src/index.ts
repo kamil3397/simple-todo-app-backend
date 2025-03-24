@@ -19,6 +19,8 @@ const run = async() => {
 
   app.post('/tasks/add', async(req, res) => await taskController.addTask(req, res));
 
+  app.delete('/task/:id/delete', async(req, res) => await taskController.deleteTask(req, res));
+
   app.listen(process.env.PORT, () => { console.log('info', `Server running on port ${process.env.PORT}`); });
 
 };
