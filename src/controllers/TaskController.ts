@@ -53,7 +53,7 @@ export class TaskController {
 
   async getTasks(req: Request, res:Response) {
     try {
-      const tasks = await this.taskCollection.find({}).toArray();
+      const tasks = await this.taskCollection.find().toArray();
       if (!tasks) {
         return res.status(404).send({ message: 'Tasks not found' });
       }
