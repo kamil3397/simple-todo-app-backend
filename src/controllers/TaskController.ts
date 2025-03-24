@@ -50,4 +50,13 @@ export class TaskController {
       return res.status(500).send({ message: 'Internal Server Error' });
     }
   }
+
+  async getTasks(req: Request, res: Response) {
+    try {
+      const tasks = await this.taskCollection.find().toArray();
+      return res.status(200).send(tasks);
+    } catch (err) {
+      return res.status(500).send({ message: 'Internal Server Error' });
+    }
+  }
 }

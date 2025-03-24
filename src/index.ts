@@ -17,6 +17,8 @@ const run = async() => {
 
   const taskController = new TaskController(database.collection('tasks'));
 
+  app.get('/tasks', async(req, res) => await taskController.getTasks(req, res));
+
   app.post('/tasks/add', async(req, res) => await taskController.addTask(req, res));
 
   app.delete('/task/:id/delete', async(req, res) => await taskController.deleteTask(req, res));
