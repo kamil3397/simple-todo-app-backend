@@ -41,10 +41,10 @@ export class TaskController {
     const taskId = req.params.id;
     try {
       const result = await this.taskCollection.deleteOne({ id: taskId });
-      if (result.deletedCount === 1) {
-        return res.status(200).send({ message: 'Task deleted successfully' });
+      if (result.deletedCount !== 1) {
+        return res.status(404).send({ message: 'Task not found' });
       }
-      return res.status(404).send({ message: 'Task not found' });
+      return  res.status(200).send({ message: 'Task deleted successfully' });
 
     } catch (err) {
       return res.status(500).send({ message: 'Internal Server Error' });
