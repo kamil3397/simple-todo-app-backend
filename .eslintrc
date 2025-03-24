@@ -37,7 +37,7 @@
       "arrow-parens": "off",
       "arrow-body-style": "off",
       "dot-notation": "warn",
-      "consistent-return": "warn",
+      "consistent-return": "off",
       "prefer-template": "warn",
       "operator-linebreak": "off",
       "no-param-reassign": "warn",
@@ -73,7 +73,7 @@
       "no-useless-return": "off",
       "object-shorthand": "off",
       "no-lonely-if": "off",
-      "no-return-await": "warn",
+      "no-return-await": "off",
       "implicit-arrow-linebreak": "off",
       "function-paren-newline": "off",
       "max-classes-per-file": "warn",
@@ -105,6 +105,7 @@
       "import/no-extraneous-dependencies": "off",
       "import/no-useless-path-segments": "warn",
       "import/no-named-default": "off",
+      "no-console": "off",  
       "import/extensions": [
         1,
         {
