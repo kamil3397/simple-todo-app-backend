@@ -51,16 +51,12 @@ export class TaskController {
     }
   }
 
-  async getTasks(req: Request, res:Response) {
+  async getTasks(req: Request, res: Response) {
     try {
       const tasks = await this.taskCollection.find().toArray();
-      if (!tasks) {
-        return res.status(404).send({ message: 'Tasks not found' });
-      }
       return res.status(200).send(tasks);
     } catch (err) {
       return res.status(500).send({ message: 'Internal Server Error' });
     }
-
   }
 }
